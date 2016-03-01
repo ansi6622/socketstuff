@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Test socket.io</title>
+</head>
+<body>
+
+<h1>Hey</h1>
+
+
+
+<script src="https://cdn.socket.io/socket.io-1.2.0.js"></script>
+<script src="https://code.jquery.com/jquery-1.11.1.js"></script>
+/////phaser cdn
+<script >
+var socket = io.connect();
+//Socket.io emit event code goes here(works with jquery syntax)
+//sending event to the back end from the front end
+    socket.emit('messageFeed', 'emitted', function(data){
+    // if(data) console.log(data);
+    })
+
+//reacting to the event from the backend
+    socket.on('messageTest', function(data){
+      alert(data);
+    });
+
+    // $.getJSON('../test')
+
+
+</script>
+
+</body>
+</html>
